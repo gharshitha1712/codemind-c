@@ -8,24 +8,20 @@ int main()
     int r,s=0;
     while(c!=0)
     {
-      r=c%10;
-      s=s*10+r;
-      c=c/10;
+        r=c%10;
+        s=s*10+r;
+        c=c/10;
     }
     int d=(s*s);
     int q,p=0;
     while(d!=0)
     {
-      q=d%10;
-      p=p*10+q;
-      d=d/10;
+        q=d%10;
+        p=p*10+q;
+        d=d/10;
     }
     if(p==b)
-    {
-       printf("True");
-    }
+    printf("True");
     else
-    {
-        printf("False");
-    }
+    printf("False");
 }
