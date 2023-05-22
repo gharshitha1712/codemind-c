@@ -1,58 +1,57 @@
 #include<stdio.h>
-int prime(int n)
-{
-    int c=0;
-    for(int i=1;i<=n;i++)
-    {
-        if(n%i==0)
-        {
-            c++;
-        }
-    }
-    if(c==2)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 int main()
 {
-    int x,f,b;
-    scanf("%d",&x);
-    for(int i=1;i<=x;i++)
+    int n,i,arr[100],j,k,np,sp,c=0,d,e;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
     {
-        int n;
-        scanf("%d",&n);
-        for(int i=n;;i++)
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=arr[i];j>=arr[i]-10;j--)
         {
-            if(prime(i))
+        	c=0;
+            for(k=1;k<=j;k++)
             {
-                f=i;
+                if(j%k==0)
+                {
+                    c++;
+                }
+            }
+            if(c==2)
+            {
+                np=j;
+                d=arr[i]-np;
                 break;
             }
         }
-        for(int i=n;;i--)
+        for(j=arr[i];j<=arr[i]+10;j++)
         {
-            if(prime(i))
+        	c=0;
+            for(k=1;k<=j;k++)
             {
-                b=i;
+                if(j%k==0)
+                {
+                    c++;
+                }
+            }
+            if(c==2)
+            {
+                sp=j;
+                e=sp-arr[i];
                 break;
             }
         }
-        int d1=f-n;
-        int d2=n-b;
-        if(d1<d2)
+        if(d<e || d==e)
         {
             printf("%d
-",f);
+",np);
         }
-        else if(d2<=d1)
+        else
         {
             printf("%d
-",b);
+",sp);
         }
     }
 }
