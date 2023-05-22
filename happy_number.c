@@ -1,26 +1,27 @@
 #include<stdio.h>
-int hn(int num)
-{
-    int rem=0,sum=0;
-    while(num>0)
-    {
-        rem=num%10;
-        sum=sum+(rem*rem);
-        num=num/10;
-    }
-    return(sum);
-}
 int main()
 {
-    int num;
-    scanf("%d",&num);
-    int result=num;
-    while(result!=1&&result!=4)
+    int n,q,r,s=0;
+    scanf("%d",&n);
+    q=n;
+    while(q>9)
     {
-        result=hn(result);
+        s=0;
+        while(q!=0)
+        {
+            r=q%10;
+            s=s+r*r;
+            q=q/10;
+        }
+        if(s>9)
+        {
+            q=s;
+        }
     }
-        if(result==1)
+    if(s==1||s==7)
+    {
         printf("True");
+    }
     else
     {
         printf("False");
